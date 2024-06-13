@@ -25,7 +25,7 @@ const SearchBar: React.FC = () => {
   };
 
   return (
-    <header className="search-bar">
+    <header data-testid="search-bar" className="search-bar">
       <img
         className="logo"
         src="/logo.png"

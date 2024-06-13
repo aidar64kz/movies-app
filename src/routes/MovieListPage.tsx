@@ -28,7 +28,7 @@ const MovieListPage: React.FC = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div>
+    <div data-testid="movie-list-page">
       <MovieList movies={displayedMovies} />
 
       {totalPages > 1 && (
