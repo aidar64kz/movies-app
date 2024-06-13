@@ -1,0 +1,42 @@
+$primary-color: #a31d35;
+$secondary-color: #732743;
+$text-color: #ffffff;
+$text-color-black: #000000;
+$background-color: #030F26;
+$background-color-white: #ffffff;
+$font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$base-font-size: 12px;
+$mobile-breakpoint: 480px;
+$tablet-breakpoint: 768px;
+$pc-breakpoint: 1366px;
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint ==mobile {
+
+        @media (max-width: #{$mobile-breakpoint}) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==tablet {
+        @media (max-width: #{$tablet-breakpoint}) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==pc {
+        @media (max-width: #{$pc-breakpoint}) {
+            @content;
+        }
+    }
+}
+
+@mixin center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin transition($property, $duration, $timing) {
+    transition: $property $duration $timing;
+}

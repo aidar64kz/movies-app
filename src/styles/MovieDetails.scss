@@ -1,0 +1,112 @@
+@import './variables';
+
+.movie-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  background: center / cover no-repeat;
+  color: $text-color-black;
+  font-size: 1.3rem;
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($background-color, 0.5); 
+    z-index: 0;
+  }
+
+  .movie-details-container {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+    background: rgba($background-color-white, 0.6);
+    border-radius: 10px;
+    position: relative;
+
+    .poster-container {
+        flex-grow: 1;
+        .poster {
+            border-radius: 4px;
+            height: auto;
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+            
+    .details-info {
+      flex-grow: 2;
+      text-align: left;
+      width: 90%;
+
+      .movie-title {
+        color: $text-color-black;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+
+        .release-year {
+          font-size: 2rem;
+          font-weight: 200;
+          color: $primary-color;
+          margin-left: 0.5rem;
+        }
+      }
+
+      .status-badge {
+        background-color: #05701c;
+        padding: 0.3rem 1rem;
+        margin-bottom: 1rem;
+
+        .status {
+          color: $text-color;
+        }
+      }
+
+      .metadata-row {
+        margin-bottom: 1rem;
+
+        .section-title {
+          color: $primary-color;
+          font-weight: 200;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      .overview,
+      .production-companies,
+      .production-countries,
+      .budget,
+      .revenue,
+      .rating,
+      .runtime {
+        color: $text-color-black;
+      }
+    }
+  }
+
+  @include respond-to(tablet) {
+    .movie-details-container {
+      flex-direction: column;
+      padding-top: 10px;
+
+      .poster-container {
+        flex-grow: 1;
+        width: 95%;
+      }
+
+      .details-info {
+        flex-grow: 2;
+        width: 90%;
+      }
+  }
+}
+}

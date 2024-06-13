@@ -1,0 +1,39 @@
+@import './variables';
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    color: $primary-color;
+    padding: 20px;
+
+    li {
+        display: flex;
+
+        &.active a {
+            font-weight: bold;
+        }
+
+        a {
+            margin: 0 5px;
+            padding: 5px 10px;
+            border: 1px solid $primary-color ;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #ffffff;
+
+            &:hover {
+                background-color: $primary-color
+            }
+        }
+
+        &.disabled a {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+    }
+}
